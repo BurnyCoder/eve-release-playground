@@ -1,0 +1,9 @@
+{
+  "name": "eve-release-playground",
+  "version": "0.0.0",
+  "description": "Tiny playground repo that the vercel-eve feature-release agent ships features to",
+  "type": "module",
+  "scripts": {
+    "test": "node --test"
+  }
+}
