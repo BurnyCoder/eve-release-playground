@@ -14,3 +14,12 @@ Prints the sum of its numeric arguments (non-numeric input exits with code 1).
 node bin/sum.js 1 2 3      # 6
 node bin/sum.js -4 10.5    # 6.5
 ```
+
+## Helper: fetchJson
+
+`fetchJson(url, timeoutMs = 5000)` in `src/http.js` GETs a URL with Node's built-in `fetch`, aborts via `AbortSignal.timeout(timeoutMs)` (rejects with a `TimeoutError`), throws an `Error` with a `status` property on non-2xx responses, and otherwise resolves with the parsed JSON body.
+
+```js
+import { fetchJson } from "./src/http.js";
+const data = await fetchJson("https://example.com/api", 3000);
+```
