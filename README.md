@@ -23,3 +23,14 @@ node bin/sum.js -4 10.5    # 6.5
 import { fetchJson } from "./src/http.js";
 const data = await fetchJson("https://example.com/api", 3000);
 ```
+
+## Helper: clamp
+
+`clamp(value, min, max)` in `src/math.js` restricts `value` to the inclusive range `[min, max]` and throws a `RangeError` if `min > max`.
+
+```js
+import { clamp } from "./src/math.js";
+clamp(15, 0, 10); // 10
+clamp(-5, 0, 10); // 0
+clamp(5, 0, 10);  // 5
+```
